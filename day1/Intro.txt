@@ -1,2 +1,10 @@
 Nest is built on top of Express JS
 Nest Js is flexible with Vanilla Javascript
+
+
+Nest Commands: 
+1. npm i -g @nestjs/cli  //Installs Nest JS Globally
+2. nest new <project name> //This command is used to create new nest project
+3. nest generate module <module name> //This command is used to generate module 
+4. nest g controller customers/controllers/customers // This is used to generate the controller in the specified path
+4. nest g service customers/services/customers // This is used to generate the service in the specified path
