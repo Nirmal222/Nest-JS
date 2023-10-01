@@ -1,6 +1,7 @@
-import { Controller, Get, Req, Res, Param, ParseIntPipe, HttpException } from '@nestjs/common';
+import { Controller, Get, Req, Res, Param, ParseIntPipe, HttpException, Post, Body } from '@nestjs/common';
 import { CustomersService } from 'src/customers/services/customers/customers.service';
 import { Request, Response } from 'express';
+import { createCustomerDTO } from 'src/customers/dtos/createCustomer.dto';
 
 @Controller('customers')
 export class CustomersController {
@@ -21,5 +22,10 @@ export class CustomersController {
         const customer = this.customerService.findCustomerById(id);
         if (customer) return customer;
         else throw new HttpException("Resource not found",404)
+    }
+
+    @Post("create")
+    createCustomer(@Body() createCustomerDto: createCustomerDTO){
+        console.log(createCustomerDto);
     }
 }  
